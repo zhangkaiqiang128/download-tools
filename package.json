@@ -1,6 +1,6 @@
 {
   "name": "export-tools",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "repository": "https://github.com/zhangkaiqiang128/export-tools",
   "homepage": "https://zhangkaiqiang128.github.io/export-tools",
   "description": "一个浏览器端数据导出工具包，能够下载常用的 XLS、XLSX、CSV、JSON 等格式数据以及图片文件",
@@ -8,7 +8,7 @@
   "types": "lib/export-tools.d.ts",
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.config.js",
-    "build": "webpack --config ./build/webpack.prod.config.js"
+    "build": "tsc && webpack --config ./build/webpack.prod.config.js"
   },
   "author": "zhangkaiqiang",
   "license": "MIT",

@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: './src/export-tools.ts',
     output: {
-        path: path.resolve(__dirname, '..', 'lib'),
+        path: path.resolve(__dirname, '..', 'dist'),
         filename: "export-tools.js"
     },
     module: {

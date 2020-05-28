@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DOWNLOAD-TOOLS</title>
+    <title>EXPORT-TOOLS</title>
 </head>
 <body>
 <table border="1" style="width: 800px;" id="table">
@@ -45,17 +45,17 @@
     </tbody>
 </table>
 <div style="margin: 14px 0;">
-    <button onclick="DownloadTools.downloadXLS(document.querySelector('#table'), 'XLS示例名称')">下载 XLS</button>
-    <button onclick="DownloadTools.downloadXLSX(document.querySelector('#table'), 'XLSX示例名称')">下载 XLSX</button>
-    <button onclick="DownloadTools.downloadCSV(document.querySelector('#table'), 'CSV示例名称')">下载 CSV</button>
+    <button onclick="ExportTools.exportXLS(document.querySelector('#table'), 'XLS示例名称')">下载 XLS</button>
+    <button onclick="ExportTools.exportXLSX(document.querySelector('#table'), 'XLSX示例名称')">下载 XLSX</button>
+    <button onclick="ExportTools.exportCSV(document.querySelector('#table'), 'CSV示例名称')">下载 CSV</button>
 </div>
 <img src="https://www.w3school.com.cn/i/eg_tulip.jpg">
 <div style="margin: 14px 0;">
-    <button onclick="DownloadTools.downloadImage('https://www.w3school.com.cn/i/eg_tulip.jpg', 'image', 'png')">下载图片</button>
+    <button onclick="ExportTools.exportImage('https://www.w3school.com.cn/i/eg_tulip.jpg', 'image', 'png')">下载图片</button>
 </div>
 <canvas id="canvas"></canvas>
 <div style="margin: 14px 0;">
-    <button onclick="DownloadTools.downloadImage(document.querySelector('#canvas'), 'canvas', 'png')">下载 Canvas 图片</button>
+    <button onclick="ExportTools.exportImage(document.querySelector('#canvas'), 'canvas', 'png')">下载 Canvas 图片</button>
 </div>
 <script>
     const canvas = document.querySelector('#canvas');

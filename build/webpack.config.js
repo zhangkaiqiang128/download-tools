@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/download-tools.ts',
+    entry: './src/export-tools.ts',
     output: {
         path: path.resolve(__dirname, '..', 'lib'),
-        filename: "download-tools.js"
+        filename: "export-tools.js"
     },
     module: {
         rules: [

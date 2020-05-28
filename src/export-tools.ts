@@ -1,7 +1,7 @@
 import { utils, Sheet, BookType, writeFile } from 'xlsx';
 import { saveAs } from 'file-saver';
 
-function downloadSheets(sheets: Array<Sheet>, filename: string, type: BookType) {
+function exportSheets(sheets: Array<Sheet>, filename: string, type: BookType) {
   const workBook = utils.book_new();
   sheets.forEach(sheet => utils.book_append_sheet(workBook, sheet));
   writeFile(workBook,  `${filename}.${type}`, {
@@ -16,7 +16,7 @@ function downloadSheets(sheets: Array<Sheet>, filename: string, type: BookType) 
  * @param data 需要导出的数据
  * @param fileName 导出的文件名称，请勿加后缀名
  */
-export function downloadXLS(data: Array<any> | HTMLTableElement, fileName: string) {
+export function exportXLS(data: Array<any> | HTMLTableElement, fileName: string) {
   let sheet = null;
 
   if (data instanceof Array) {
@@ -25,7 +25,7 @@ export function downloadXLS(data: Array<any> | HTMLTableElement, fileName: strin
     sheet = utils.table_to_sheet(data);
   }
 
-  downloadSheets([sheet], fileName, 'xls');
+  exportSheets([sheet], fileName, 'xls');
 }
 
 /**
@@ -33,7 +33,7 @@ export function downloadXLS(data: Array<any> | HTMLTableElement, fileName: strin
  * @param data 需要导出的数据
  * @param fileName 导出的文件名称，请勿加后缀名
  */
-export function downloadXLSX(data: Array<any> | HTMLTableElement, fileName: string) {
+export function exportXLSX(data: Array<any> | HTMLTableElement, fileName: string) {
   let sheet = null;
 
   if (data instanceof Array) {
@@ -42,7 +42,7 @@ export function downloadXLSX(data: Array<any> | HTMLTableElement, fileName: stri
     sheet = utils.table_to_sheet(data);
   }
 
-  downloadSheets([sheet], fileName, 'xlsx');
+  exportSheets([sheet], fileName, 'xlsx');
 }
 
 /**
@@ -50,7 +50,7 @@ export function downloadXLSX(data: Array<any> | HTMLTableElement, fileName: stri
  * @param data 需要导出的数据
  * @param fileName 导出的文件名称，请勿加后缀名
  */
-export function downloadCSV(data: Array<any> | HTMLTableElement, fileName: string) {
+export function exportCSV(data: Array<any> | HTMLTableElement, fileName: string) {
   let sheet = null;
 
   if (data instanceof Array) {
@@ -59,7 +59,7 @@ export function downloadCSV(data: Array<any> | HTMLTableElement, fileName: strin
     sheet = utils.table_to_sheet(data);
   }
 
-  downloadSheets([sheet], fileName, 'csv');
+  exportSheets([sheet], fileName, 'csv');
 }
 
 
@@ -68,7 +68,7 @@ export function downloadCSV(data: Array<any> | HTMLTableElement, fileName: strin
  * @param data 需要导出的数据
  * @param fileName 导出的文件名称，请勿加后缀名
  */
-export function downloadJSON(data: any, filename: string) {
+export function exportJSON(data: any, filename: string) {
   saveAs(new Blob([JSON.stringify(data)], {
     type: 'application/json;charset=utf-8'
   }), `${filename}.json`);
@@ -79,7 +79,7 @@ export function downloadJSON(data: any, filename: string) {
  * @param data 需要导出的数据
  * @param fileName 导出的文件名称，请勿加后缀名
  */
-export function downloadText(data: string, filename: string) {
+export function exportText(data: string, filename: string) {
   saveAs(new Blob([data], {
     type: 'text/plain;charset=utf-8'
   }), `${filename}.txt`);
@@ -91,7 +91,7 @@ export function downloadText(data: string, filename: string) {
  * @param fileName 导出的文件名称，请勿加后缀名
  * @param type 导出的文件格式
  */
-export function downloadImage(target: string | HTMLImageElement | HTMLCanvasElement, filename: string, type: string = 'png') {
+export function exportImage(target: string | HTMLImageElement | HTMLCanvasElement, filename: string, type: string = 'png') {
   if (typeof target === 'string') {
     saveAs(target, `${filename}.${type}`);
   }
@@ -107,17 +107,17 @@ export function downloadImage(target: string | HTMLImageElement | HTMLCanvasElem
   }
 }
 
-const DownloadTools = {
-  downloadImage,
-  downloadXLS,
-  downloadXLSX,
-  downloadCSV,
-  downloadJSON,
-  downloadText
+const ExportTools = {
+  exportImage,
+  exportXLS,
+  exportXLSX,
+  exportCSV,
+  exportJSON,
+  exportText
 }
 
-export default DownloadTools
+export default ExportTools
 
 if (window) {
-  window['DownloadTools'] = DownloadTools
+  window['ExportTools'] = ExportTools
 }

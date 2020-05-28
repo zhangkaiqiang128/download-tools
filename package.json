@@ -1,11 +1,11 @@
 {
-  "name": "download-tools",
-  "version": "1.0.0",
-  "repository": "https://github.com/zhangkaiqiang128/download-tools",
-  "homepage": "https://zhangkaiqiang128.github.io/download-tools",
-  "description": "一个浏览器端数据下载工具包，能够下载常用的 XLS、XLSX、CSV、JSON 等格式数据以及图片文件",
-  "main": "lib/download-tools.js",
-  "types": "lib/download-tools.d.ts",
+  "name": "export-tools",
+  "version": "2.0.1",
+  "repository": "https://github.com/zhangkaiqiang128/export-tools",
+  "homepage": "https://zhangkaiqiang128.github.io/export-tools",
+  "description": "一个浏览器端数据导出工具包，能够下载常用的 XLS、XLSX、CSV、JSON 等格式数据以及图片文件",
+  "main": "lib/export-tools.js",
+  "types": "lib/export-tools.d.ts",
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.config.js",
     "build": "webpack --config ./build/webpack.prod.config.js"

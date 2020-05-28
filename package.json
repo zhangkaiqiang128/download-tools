@@ -1,0 +1,27 @@
+{
+  "name": "download-tools",
+  "version": "1.0.0",
+  "description": "一个浏览器端数据下载工具包，能够下载常用的 XLS、XLSX、CSV、JSON 等格式数据以及图片文件",
+  "main": "lib/download-tools.js",
+  "types": "lib/download-tools.d.ts",
+  "scripts": {
+    "start": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js"
+  },
+  "author": "zhangkaiqiang",
+  "license": "MIT",
+  "devDependencies": {
+    "docsify-cli": "^4.4.0",
+    "html-webpack-plugin": "^4.3.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.2",
+    "xlsx": "^0.16.1"
+  }
+}

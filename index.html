@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOWNLOAD-TOOLS</title>
+</head>
+<body>
+<table border="1" style="width: 800px;" id="table">
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>成绩</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>张三</td>
+        <td>男</td>
+        <td>18</td>
+        <td>92</td>
+    </tr>
+    <tr>
+        <td>二狗</td>
+        <td>女</td>
+        <td>16</td>
+        <td>78</td>
+    </tr>
+    <tr>
+        <td>李伟</td>
+        <td>男</td>
+        <td>17</td>
+        <td>59</td>
+    </tr>
+    <tr>
+        <td>姗姗</td>
+        <td>女</td>
+        <td>18</td>
+        <td>88</td>
+    </tr>
+    </tbody>
+</table>
+<div style="margin: 14px 0;">
+    <button onclick="DownloadTools.downloadXLS(document.querySelector('#table'), 'XLS示例名称')">下载 XLS</button>
+    <button onclick="DownloadTools.downloadXLSX(document.querySelector('#table'), 'XLSX示例名称')">下载 XLSX</button>
+    <button onclick="DownloadTools.downloadCSV(document.querySelector('#table'), 'CSV示例名称')">下载 CSV</button>
+</div>
+<img src="https://www.w3school.com.cn/i/eg_tulip.jpg">
+<div style="margin: 14px 0;">
+    <button onclick="DownloadTools.downloadImage('https://www.w3school.com.cn/i/eg_tulip.jpg', 'image', 'png')">下载图片</button>
+</div>
+<canvas id="canvas"></canvas>
+<div style="margin: 14px 0;">
+    <button onclick="DownloadTools.downloadImage(document.querySelector('#canvas'), 'canvas', 'png')">下载 Canvas 图片</button>
+</div>
+<script>
+    const canvas = document.querySelector('#canvas');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#0000ff';
+    ctx.fillRect(10, 10, 100, 100);
+
+    ctx.fillStyle = '#00ffff';
+    ctx.ellipse(100, 100, 20, 20, 0, 0, 360);
+    ctx.fill()
+</script>
+</body>
+</html>
